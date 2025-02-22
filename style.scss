@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    padding: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    
+   
+}
+main{
+    width: 100%;
+    padding: 0;
+}
+section{
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    flex-wrap: wrap;
+    height: 100%;
+    
+}
+section img{
+    width: 60vw;
+    object-fit: cover;
+}
+img{
+    width: 50vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
+}
+
+section h1{
+    color: wheat;
+    font-size: 2.8rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    flex-wrap: wrap;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 250;
+
+}
+section p{
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(245, 222, 179, 0.534);
+    text-align: center;
+    margin-top: 15px;
+    object-fit: cover;
+    width: 90%;
+    flex-wrap: wrap;
+    br{
+        display: none;
+    }
+
+
+}
+
+  // view-2
+  
+    .view-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4rem 0;
+        width: 100%;
+
+    .marquee{
+        display: flex;
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+        justify-content: space-evenly;
+        position: relative;
+        &::after{
+            content: "";
+            background: linear-gradient(to left, black, transparent, transparent, transparent);
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            right:0;
+            padding: 0%;
+        }
+        &::before{
+            content: "";
+            background: linear-gradient(to right, black, transparent, transparent, transparent);
+            height: 100%;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0%;
+            z-index: 2;
+
+        }
+        
+    }
+    
+    .text{
+    display: flex;
+    margin: 0rem;
+    justify-content: space-evenly;
+    animation: marquee 10s linear infinite both ;
+    gap: 2rem;
+    padding: 0 1.5rem;
+
+
+
+    p{
+        display: flex;
+        font-size: .9rem;
+        font-weight: 300;
+        align-items: center;
+        justify-content: space-evenly;
+        
+    }
+    }
+    }
+
+// animation view 2
+@keyframes marquee{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+// desktop view
+@media (min-width: 900px){
+    html{
+        font-size: clamp(16px, 1vw, 25px);
+    }
+    .view-1 img{
+        width: 40%;
+        
+    }
+  .view-1 { h1{
+        font-size: 5rem;
+    }
+    
+    p{
+        br{
+            display: block;
+        }
+        font-size: 1.7rem;
+    }
+    
+    }
+    .view-2{
+        .marquee{
+            width: 55%;
+         p{
+            font-size: 1.5rem;
+          }  
+        }
+    }
+
+}
+@media (min-width: 745px){
+    .view-2{
+        .marquee{
+            width: 55%;
+         p{
+            font-size: 1.5rem;
+          }  
+        }
+    }
+
+}
